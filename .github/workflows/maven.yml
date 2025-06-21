@@ -27,7 +27,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-        -name: Build & Push docker image
+        - name: Build & Push docker image
         env: 
         DOCKERHUB_USER :  ${{ secrets.DOCKERHUB_USER }} 
         DOCKERHUB_PWD: ${{ secrets.DOCKERHUB_PWD }} 

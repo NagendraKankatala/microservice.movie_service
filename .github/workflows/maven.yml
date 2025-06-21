@@ -20,15 +20,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
-        - name: Build & Push docker image
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build & Push docker image
         env: 
-        DOCKERHUB_USER:   ${{ secrets.DOCKERHUB_USER }} 
-        DOCKERHUB_PWD: ${{ secrets.DOCKERHUB_PWD }} 
+          DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+          DOCKERHUB_PWD: ${{ secrets.DOCKERHUB_PWD }}
         run: mvn -B spring-boot:build-image -DskipTests

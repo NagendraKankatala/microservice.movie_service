@@ -90,7 +90,7 @@
 						</exclude>
 					</excludes>
 					<image>
-						<name>docker.io/microservice/${project.artifactId}:${project.version}</name>
+						<name>docker.io/nagendrakankatala/${project.artifactId}:${project.version}</name>
 						<publish>true</publish>
 					</image>
 					<docker>
